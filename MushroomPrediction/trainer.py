@@ -7,10 +7,11 @@ from MushroomPrediction.utils import compute_rmse
 from memoized_property import memoized_property
 from mlflow.tracking import MlflowClient
 from sklearn.compose import ColumnTransformer
-from sklearn.linear_model import LinearRegression
+from sklearn.compose import make_column_selector
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 
 #MLFLOW_URI = "https://mlflow.lewagon.ai/"
 EXPERIMENT_NAME = "first_experiment"
@@ -34,28 +35,19 @@ class Trainer(object):
 
     def set_pipeline(self):
         """defines the pipeline as a class attribute"""
-        dist_pipe = Pipeline([
-            ('dist_trans', DistanceTransformer()),
-            ('stdscaler', StandardScaler())
-        ])
-        time_pipe = Pipeline([
-            ('time_enc', TimeFeaturesEncoder('pickup_datetime')),
-            ('ohe', OneHotEncoder(handle_unknown='ignore'))
-        ])
-        preproc_pipe = ColumnTransformer([
-            ('distance', dist_pipe, [
-                "pickup_latitude",
-                "pickup_longitude",
-                'dropoff_latitude',
-                'dropoff_longitude'
-            ]),
-            ('time', time_pipe, ['pickup_datetime'])
-        ], remainder="drop")
+        preprocessor = ColumnTransformer([('num_encoder',
+                                           MinMaxScaler(),
+                                           make_column_selector(dtype_include="float64")),
+                                          ('cat_encoder', OneHotEncoder(handle_unknown='ignore', sparse=False),
+                                           make_column_selector(dtype_include="object"))])
 
-        self.pipeline = Pipeline([
-            ('preproc', preproc_pipe),
-            ('linear_model', LinearRegression())
-        ])
+        self.pipeline = Pipeline([('preprocessing', preprocessor),
+                         ('RandomForestClassifier',
+                          RandomForestClassifier(n_estimators=1000,
+                                                      criterion='gini',
+                                                      max_depth= 30,
+                                                      random_state=123))
+                         ])
 
     def run(self):
         self.set_pipeline()
