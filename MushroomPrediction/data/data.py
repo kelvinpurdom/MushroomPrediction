@@ -1,9 +1,10 @@
 import pandas as pd
 
+DATA_PATH = '../raw_data/secondary_data.csv'
 
 def get_data():
     '''returns a DataFrame with nrows from s3 bucket'''
-    df = pd.read_csv('../raw_data/secondary_data.csv', sep=";", low_memory=False)
+    df = pd.read_csv(DATA_PATH, sep=";", low_memory=False)
     return df
 
 
