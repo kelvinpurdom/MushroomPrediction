@@ -101,7 +101,7 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
     # Train and save model, locally and
     trainer = Trainer(X=X_train, y=y_train)
-    trainer.set_experiment_name('xp2')
+    trainer.set_experiment_name('xp1')
     trainer.run()
     rmse = trainer.evaluate(X_test, y_test)
     print(f"rmse: {rmse}")
