@@ -51,7 +51,7 @@ class Trainer(object):
 
     def run(self):
         self.set_pipeline()
-        self.mlflow_log_param("model", "Linear")
+        self.mlflow_log_param("model", "RandomForest")
         self.pipeline.fit(self.X, self.y)
 
     def evaluate(self, X_test, y_test):
@@ -96,8 +96,8 @@ if __name__ == "__main__":
     N = 10000
     df = get_data(nrows=N)
     df = clean_data(df)
-    y = df["fare_amount"]
-    X = df.drop("fare_amount", axis=1)
+    y = df["class"]
+    X = df.drop("class", axis=1)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
     # Train and save model, locally and
     trainer = Trainer(X=X_train, y=y_train)
