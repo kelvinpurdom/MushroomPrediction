@@ -2,7 +2,6 @@ import joblib
 from termcolor import colored
 import mlflow
 from MushroomPrediction.data import get_data, clean_data
-from MushroomPrediction.encoders import TimeFeaturesEncoder, DistanceTransformer
 from MushroomPrediction.utils import compute_rmse
 from memoized_property import memoized_property
 from mlflow.tracking import MlflowClient
