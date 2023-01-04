@@ -3,7 +3,7 @@ import os
 from google.cloud import storage
 from termcolor import colored
 
-BUCKET_NAME = "wagon-data-871-purdom"  # ⚠️ replace with your BUCKET NAME
+BUCKET_NAME = "k-purdom"  # ⚠️ replace with your BUCKET NAME
 
 
 def storage_upload(model_directory, bucket=BUCKET_NAME, rm=False):
