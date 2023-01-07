@@ -1,7 +1,8 @@
 from sklearn.ensemble import RandomForestClassifier
 import streamlit as st
 import pandas as pd
+import pickle
 from sklearn.pipeline import Pipeline
 
-pipe = Pipeline()
-pipe.load_model('rf_model.json')
+with open('../notebooks/rf_model.pkl', 'rb') as f:
+    model = pickle.load(f)
