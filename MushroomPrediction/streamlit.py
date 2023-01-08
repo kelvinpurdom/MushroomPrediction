@@ -17,22 +17,14 @@ def predict(cap_diameter, cap_shape, cap_surface,
 
 
 
-prediction = model.predict(pd.DataFrame([[carat,
-                                          cut,
-                                          color,
-                                          clarity,
-                                          depth,
-                                          table,
-                                          x,
-                                          y,
-                                          z]],
-                                        columns=['carat',
-                                                 'cut',
-                                                 'color',
-                                                 'clarity',
-                                                 'depth',
-                                                 'table',
-                                                 'x',
-                                                 'y',
-                                                 'z']))
+prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
+            cap_color, does_bruise_or_bleed,
+            gill_attachment,gill_color,stem_height,
+            stem_width, stem_color, has_ring,ring_type,
+            habitat,season]],
+                                        columns=['cap-diameter', 'cap-shape', 'cap-surface',
+                                                 'cap-color', 'does-bruise-or-bleed',
+                                                 'gill-attachment', 'gill-color','stem-height',
+                                                 'stem-width', 'stem-color', 'has-ring','ring-type',
+                                                 'habitat','season']))
 return prediction
