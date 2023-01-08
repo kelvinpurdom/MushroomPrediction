@@ -142,6 +142,22 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif ring_type == 'None':
         ring_type = 'f'
 
+    if habitat == 'Grasses':
+        habitat = 'g'
+    elif habitat == 'Leaves':
+        habitat = 'l'
+    elif habitat == 'Meadows':
+        habitat = 'm'
+    elif habitat == 'Paths':
+        habitat = 'p'
+    elif habitat == 'Heaths':
+        habitat = 'h'
+    elif habitat == 'Urban':
+        habitat = 'u'
+    elif habitat == 'Waste':
+        habitat = 'w'
+    elif habitat == 'Woods':
+        habitat = 'd'
 
 
 
