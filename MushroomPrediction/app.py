@@ -2,15 +2,18 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+# loading the model
 with open('rf_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-
+# predict function will put all the variables from streamlit into the model
 def predict(cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
             stem_width, stem_color, has_ring,ring_type,
             habitat,season):
+    # encoding streamlit to correct types of input data
+    # cap shape
     if cap_shape == 'Convex':
         cap_shape = 'x'
     elif cap_shape == 'Flat':
@@ -26,6 +29,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif cap_shape == 'Conical':
         cap_shape = 'c'
 
+    # cap surface
     if cap_surface == 'Sticky':
         cap_surface = 't'
     elif cap_surface == 'Smooth':
@@ -49,6 +53,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif cap_surface == 'leathery':
         cap_surface = 'l'
 
+    # cap color
     if cap_color == 'Brown':
         cap_color = 'n'
     elif cap_color == 'Yellow':
@@ -74,11 +79,15 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif cap_color == 'Buff':
         cap_color = 'b'
 
+
+    # does bruise or bleed
     if does_bruise_or_bleed == 'False':
         does_bruise_or_bleed = 'f'
     elif does_bruise_or_bleed == 'True':
         does_bruise_or_bleed = 't'
 
+
+    # gill attachment
     if gill_attachment == 'Adnate':
         gill_attachment = 'a'
     elif gill_attachment == 'Adnexed':
@@ -94,6 +103,8 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif gill_attachment == 'None':
         gill_attachment = 'f'
 
+
+    # gill color
     if gill_color == 'Brown':
         gill_color = 'n'
     elif cap_color == 'Yellow':
@@ -122,13 +133,13 @@ def predict(cap_diameter, cap_shape, cap_surface,
         gill_color = 'f'
 
 
-
+    # does it have a ring
     if has_ring == 'False':
         has_ring = 'f'
     elif has_ring == 'True':
         has_ring = 't'
 
-
+    # what is the ring type
     if ring_type == 'Evanescent':
         ring_type = 'e'
     elif ring_type == 'Flaring':
@@ -144,6 +155,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif ring_type == 'None':
         ring_type = 'f'
 
+    # what habitat does it live in
     if habitat == 'Grasses':
         habitat = 'g'
     elif habitat == 'Leaves':
@@ -161,6 +173,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif habitat == 'Woods':
         habitat = 'd'
 
+    # What season is it
     if season == 'Spring':
         season = 's'
     elif season == 'Summer':
@@ -171,7 +184,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         season = 'w'
 
 
-
+    # prediction of the model engaged
     prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
@@ -184,10 +197,12 @@ def predict(cap_diameter, cap_shape, cap_surface,
                                                  'habitat','season']))
     return prediction
 
+# Style points
 st.title('Poisonous Mushroom Predictor')
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
 st.header('Enter the characteristics of the Mushroom: ')
 
+# input numbers and selectbox options
 col1, col2, col3 = st.columns(3)
 with col1:
     cap_diameter = st.number_input('Cap-diameter(cm):', min_value=0.38, max_value=63.0, value=1.0, step= 0.05)
@@ -221,7 +236,7 @@ with col3:
     season = st.selectbox('Season:', ['Spring', 'Summer', 'Winter', 'Summer'])
 
 
-
+#  streamlit button to activate predict function
 if st.button('Predict if Poisonous'):
     poison = predict(cap_diameter, cap_shape, cap_surface,
                     cap_color, does_bruise_or_bleed,gill_attachment,
@@ -229,6 +244,7 @@ if st.button('Predict if Poisonous'):
                     has_ring,ring_type, habitat, season)
     if poison[0] == 1:
         poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
+
     else:
-        poison = 'I can with 99.9% accuracysay this mushroom is NOT POISONOUS'
+        poison = 'I can with 99.9% accuracy say this mushroom is NOT POISONOUS'
     st.success(f'{poison}')
