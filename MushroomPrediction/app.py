@@ -74,6 +74,11 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif cap_color == 'Buff':
         cap_color = 'b'
 
+    if does_bruise_or_bleed == 'False':
+        does_bruise_or_bleed = 'f'
+    elif does_bruise_or_bleed == 'True':
+        does_bruise_or_bleed = 't'
+
     prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
