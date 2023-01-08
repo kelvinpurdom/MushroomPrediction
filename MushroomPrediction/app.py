@@ -198,7 +198,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     return prediction
 
 # Style points
-st.title('Poisonous Mushroom Predictor')
+st.title('The Poisonous Mushroom Predictor')
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
 st.header('Enter the characteristics of the Mushroom: ')
 
