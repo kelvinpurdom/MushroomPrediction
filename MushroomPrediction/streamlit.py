@@ -33,3 +33,7 @@ st.header('Enter the characteristics of the Mushroom: ')
 
 cap_diameter = st.number_input('Cap-diameter:', min_value=0.38, max_value=63.0, value=1.0)
 cap_shape = st.selectbox('Cap-shape', ['x', 'f', 's', 'b', 'o', 'p', 'c'])
+cap_surface = st.selectbox('Cap-surface', ['t', 's', 'y', 'h', 'g', 'd', 'e', 'k', 'i', 'w', 'l'])
+cap_color = st.selectbox('Cap-color', ['n', 'y', 'w', 'g', 'e', 'o', 'r', 'p', 'k', 'b', 'l'])
+does_bruise_or_bleed = st.selectbox('does-bruise-or-bleed', ['f', 't'])
+gill_attachment =
