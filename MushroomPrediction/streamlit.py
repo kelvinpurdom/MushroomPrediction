@@ -18,7 +18,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
-            stem_width, stem_color, has_ring,ring_type,
+            stem_width, stem_color, has_ring, ring_type,
             habitat,season]],
                                         columns=['cap-diameter', 'cap-shape', 'cap-surface',
                                                  'cap-color', 'does-bruise-or-bleed',
@@ -32,8 +32,29 @@ st.image("""https://www.thestreet.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:
 st.header('Enter the characteristics of the Mushroom: ')
 
 cap_diameter = st.number_input('Cap-diameter:', min_value=0.38, max_value=63.0, value=1.0)
-cap_shape = st.selectbox('Cap-shape', ['x', 'f', 's', 'b', 'o', 'p', 'c'])
-cap_surface = st.selectbox('Cap-surface', ['t', 's', 'y', 'h', 'g', 'd', 'e', 'k', 'i', 'w', 'l'])
-cap_color = st.selectbox('Cap-color', ['n', 'y', 'w', 'g', 'e', 'o', 'r', 'p', 'k', 'b', 'l'])
-does_bruise_or_bleed = st.selectbox('does-bruise-or-bleed', ['f', 't'])
-gill_attachment =
+
+cap_shape = st.selectbox('Cap-shape:', ['x', 'f', 's', 'b', 'o', 'p', 'c'])
+
+cap_surface = st.selectbox('Cap-surface:', ['t', 's', 'y', 'h', 'g', 'd', 'e', 'k', 'i', 'w', 'l'])
+
+cap_color = st.selectbox('Cap-color:', ['n', 'y', 'w', 'g', 'e', 'o', 'r', 'p', 'k', 'b', 'l'])
+
+does_bruise_or_bleed = st.selectbox('does-bruise-or-bleed:', ['f', 't'])
+
+gill_attachment = st.selectbox('Gill-attachment:', ['a', 'd', 'x', 'p', 'e', 's', 'f'])
+
+gill_color = st.selectbox('Gill-color:', ['a', 'd', 'x', 'p', 'e', 's', 'f'])
+
+stem_height = st.number_input('Stem-height:', min_value=0.0, max_value=34.0, value=1.0)
+
+stem_width = st.number_input('Stem-width:', min_value=0.0, max_value=34.0, value=1.0)
+
+stem_color = st.selectbox('Stem-color:', ['w', 'n', 'y', 'g', 'o', 'e', 'u', 'f', 'p', 'k', 'r', 'l', 'b'])
+
+has_ring = st.selectbox('has-ring:', ['f', 't'])
+
+ring_type = st.selectbox('has-ring:', ['f', 'e', 'z', 'l', 'r', 'p', 'g', 'm'])
+
+habitat = st.selectbox('Habitat:', ['d', 'g', 'l', 'm', 'h', 'p', 'w', 'u'])
+
+Season = st.selectbox('Season:', ['a', 'u', 'w', 's'])
