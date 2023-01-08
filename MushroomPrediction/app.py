@@ -159,6 +159,15 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif habitat == 'Woods':
         habitat = 'd'
 
+    if season == 'Spring':
+        season = 's'
+    elif season == 'Summer':
+        season = 'u'
+    elif season == 'Autumn':
+        season = 'a'
+    elif season == 'Winter':
+        season = 'w'
+
 
 
 
