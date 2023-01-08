@@ -29,4 +29,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
 
 st.title('Poisonous Mushroom Predictor')
 st.image("""https://www.thestreet.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTY4NjUwNDYyNTYzNDExNTkx/why-dominion-diamonds-second-trip-to-the-block-may-be-different.png""")
-st.header('Enter the characteristics of the Mushroom:')
+st.header('Enter the characteristics of the Mushroom: ')
+
+cap_diameter = st.number_input('Cap-diameter:', min_value=0.38, max_value=63.0, value=1.0)
+cap_shape = st.selectbox('Cap-shape', ['x', 'f', 's', 'b', 'o', 'p', 'c'])
