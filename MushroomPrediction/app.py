@@ -121,6 +121,8 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif gill_color == 'None':
         gill_color = 'f'
 
+
+
     if has_ring == 'False':
         has_ring = 'f'
     elif has_ring == 'True':
@@ -170,10 +172,6 @@ def predict(cap_diameter, cap_shape, cap_surface,
 
 
 
-
-
-
-
     prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
@@ -194,25 +192,25 @@ cap_diameter = st.number_input('Cap-diameter:', min_value=0.38, max_value=63.0, 
 
 cap_shape = st.selectbox('Cap Shape:', ['Convex', 'Flat', 'Sunken', 'Bell', 'Other', 'Spherical', 'Conical'])
 
-cap_surface = st.selectbox('Cap Surface:', ['t', 's', 'y', 'h', 'g', 'd', 'e', 'k', 'i', 'w', 'l'])
+cap_surface = st.selectbox('Cap Surface:', ['Sticky', 'Smooth', 'Scaley', 'Shiney', 'Grooves', 'Convex', 'Fleshy', 'Silky', 'Fibrous', 'Wrinkled', 'Leathery'])
 
-cap_color = st.selectbox('Cap Color:', ['n', 'y', 'w', 'g', 'e', 'o', 'r', 'p', 'k', 'b', 'l'])
+cap_color = st.selectbox('Cap Color:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff'])
 
-does_bruise_or_bleed = st.selectbox('Does Bruise or Bleed:', ['f', 't'])
+does_bruise_or_bleed = st.selectbox('Does Bruise or Bleed:', ['False', 'True'])
 
-gill_attachment = st.selectbox('Gill Attachment:', ['a', 'd', 'x', 'p', 'e', 's', 'f'])
+gill_attachment = st.selectbox('Gill Attachment:', ['Adnate', 'Decurrent', 'Adnexed', 'Pores', 'Free', 'Sinuate', 'None'])
 
-gill_color = st.selectbox('Gill Color:', ['n', 'y', 'w', 'g', 'e', 'o', 'r', 'p', 'k', 'b', 'l'])
+gill_color = st.selectbox('Gill Color:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
 
 stem_height = st.number_input('Stem Height:', min_value=0.0, max_value=34.0, value=1.0)
 
 stem_width = st.number_input('Stem Width:', min_value=0.0, max_value=34.0, value=1.0)
 
-stem_color = st.selectbox('Stem Color:', ['w', 'n', 'y', 'g', 'o', 'e', 'u', 'f', 'p', 'k', 'r', 'l', 'b'])
+stem_color = st.selectbox('Stem Color:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
 
-has_ring = st.selectbox('has-ring:', ['f', 't'])
+has_ring = st.selectbox('has-ring:', ['False', 'True'])
 
-ring_type = st.selectbox('Ring Type:', ['f', 'e', 'z', 'l', 'r', 'p', 'g', 'm'])
+ring_type = st.selectbox('Ring Type:', ['Evanescent', 'Flaring', 'Grooved', 'Pendant', 'Zone', 'Movable', 'None'])
 
 habitat = st.selectbox('Habitat:', ['d', 'g', 'l', 'm', 'h', 'p', 'w', 'u'])
 
