@@ -28,7 +28,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     return prediction
 
 st.title('Poisonous Mushroom Predictor')
-st.image("""https://www.thestreet.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:good%2Cw_1200/MTY4NjUwNDYyNTYzNDExNTkx/why-dominion-diamonds-second-trip-to-the-block-may-be-different.png""")
+st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
 st.header('Enter the characteristics of the Mushroom: ')
 
 cap_diameter = st.number_input('Cap-diameter:', min_value=0.38, max_value=63.0, value=1.0)
@@ -57,4 +57,11 @@ ring_type = st.selectbox('has-ring:', ['f', 'e', 'z', 'l', 'r', 'p', 'g', 'm'])
 
 habitat = st.selectbox('Habitat:', ['d', 'g', 'l', 'm', 'h', 'p', 'w', 'u'])
 
-Season = st.selectbox('Season:', ['a', 'u', 'w', 's'])
+season = st.selectbox('Season:', ['a', 'u', 'w', 's'])
+
+if st.button('Predict if Poisonous'):
+    poison = predict(cap_diameter, cap_shape, cap_surface,
+                    cap_color, does_bruise_or_bleed,gill_attachment,
+                    gill_color,stem_height,stem_width, stem_color,
+                    has_ring,ring_type, habitat, season)
+    st.success(f'The Mushroom is {poison[0]:.2f}')
