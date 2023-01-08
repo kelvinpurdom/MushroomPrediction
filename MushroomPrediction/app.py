@@ -127,6 +127,25 @@ def predict(cap_diameter, cap_shape, cap_surface,
         has_ring = 't'
 
 
+    if ring_type == 'Evanescent':
+        ring_type = 'e'
+    elif ring_type == 'Flaring':
+        ring_type = 'r'
+    elif ring_type == 'Grooved':
+        ring_type = 'g'
+    elif ring_type == 'Pendant':
+        ring_type = 'p'
+    elif ring_type == 'Zone':
+        ring_type = 'z'
+    elif ring_type == 'Movable':
+        ring_type = 'm'
+    elif ring_type == 'None':
+        ring_type = 'f'
+
+
+
+
+
 
 
 
