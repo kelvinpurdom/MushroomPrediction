@@ -79,6 +79,52 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif does_bruise_or_bleed == 'True':
         does_bruise_or_bleed = 't'
 
+    if gill_attachment == 'Adnate':
+        gill_attachment = 'a'
+    elif gill_attachment == 'Adnexed':
+        gill_attachment = 'x'
+    elif gill_attachment == 'Decurrent':
+        gill_attachment = 'd'
+    elif gill_attachment == 'Free':
+        gill_attachment = 'e'
+    elif gill_attachment == 'Sinuate':
+        gill_attachment = 's'
+    elif gill_attachment == 'Pores':
+        gill_attachment = 'p'
+    elif gill_attachment == 'None':
+        gill_attachment = 'f'
+
+    if gill_color == 'Brown':
+        gill_color = 'n'
+    elif cap_color == 'Yellow':
+        gill_color = 'y'
+    elif gill_color == 'White':
+        gill_color = 'w'
+    elif gill_color == 'Grey':
+        gill_color = 'g'
+    elif gill_color == 'Red':
+        gill_color = 'e'
+    elif gill_color == 'Orange':
+        gill_color = 'o'
+    elif gill_color == 'Green':
+        gill_color = 'r'
+    elif gill_color == 'Purple':
+        gill_color = 'u'
+    elif gill_color == 'Pink':
+        gill_color = 'p'
+    elif gill_color == 'Black':
+        gill_color = 'k'
+    elif gill_color == 'Blue':
+        gill_color = 'l'
+    elif gill_color == 'Buff':
+        gill_color = 'b'
+    elif gill_color == 'None':
+        gill_color = 'f'
+
+
+
+
+
     prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
@@ -107,7 +153,7 @@ does_bruise_or_bleed = st.selectbox('Does Bruise or Bleed:', ['f', 't'])
 
 gill_attachment = st.selectbox('Gill Attachment:', ['a', 'd', 'x', 'p', 'e', 's', 'f'])
 
-gill_color = st.selectbox('Gill Color:', ['a', 'd', 'x', 'p', 'e', 's', 'f'])
+gill_color = st.selectbox('Gill Color:', ['n', 'y', 'w', 'g', 'e', 'o', 'r', 'p', 'k', 'b', 'l'])
 
 stem_height = st.number_input('Stem Height:', min_value=0.0, max_value=34.0, value=1.0)
 
