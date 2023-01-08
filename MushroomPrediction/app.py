@@ -211,21 +211,21 @@ with col1:
 
     cap_surface = st.selectbox('Cap Surface:', ['Sticky', 'Smooth', 'Scaley', 'Shiney', 'Grooves', 'Convex', 'Fleshy', 'Silky', 'Fibrous', 'Wrinkled', 'Leathery'])
 
-    cap_color = st.selectbox('Cap Color:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff'])
+    cap_color = st.selectbox('Cap Colour:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff'])
 
     does_bruise_or_bleed = st.selectbox('Does Bruise or Bleed:', ['False', 'True'])
 
 with col2:
     gill_attachment = st.selectbox('Gill Attachment:', ['Adnate', 'Decurrent', 'Adnexed', 'Pores', 'Free', 'Sinuate', 'None'])
 
-    gill_color = st.selectbox('Gill Color:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
+    gill_color = st.selectbox('Gill Colour:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
 
     stem_height = st.number_input('Stem Height(cm):', min_value=0.0, max_value=34.0, value=1.0,step= 0.05)
 
     stem_width = st.number_input('Stem Width(cm):', min_value=0.0, max_value=34.0, value=1.0,step= 0.05)
 
 with col3:
-    stem_color = st.selectbox('Stem Color:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
+    stem_color = st.selectbox('Stem Colour:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
 
     has_ring = st.selectbox('Has a Ring:', ['False', 'True'])
 
