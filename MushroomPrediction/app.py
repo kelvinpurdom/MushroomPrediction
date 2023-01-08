@@ -121,6 +121,11 @@ def predict(cap_diameter, cap_shape, cap_surface,
     elif gill_color == 'None':
         gill_color = 'f'
 
+    if has_ring == 'False':
+        has_ring = 'f'
+    elif has_ring == 'True':
+        has_ring = 't'
+
 
 
 
