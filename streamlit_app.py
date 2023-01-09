@@ -6,7 +6,7 @@ import pickle
 #with open('rf_model.pkl', 'rb') as f:
     #model = pickle.load(f)
 
-model = pickle.load(open('../notebooks/rf_model.pkl','rb'))
+model = pickle.load(open("rf_model.pkl","rb"))
 
 # predict function will put all the variables from streamlit into the model
 def predict(cap_diameter, cap_shape, cap_surface,
@@ -244,9 +244,10 @@ if st.button('Predict if Poisonous'):
                     cap_color, does_bruise_or_bleed,gill_attachment,
                     gill_color,stem_height,stem_width, stem_color,
                     has_ring,ring_type, habitat, season)
-    if poison[0] == 1:
-        poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
+    print(poison)
+    #if poison[0] == 1:
+        #poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
 
-    else:
-        poison = 'I can with 99.9% accuracy say this mushroom is NOT POISONOUS'
-    st.success(f'{poison}')
+    #else:
+        #poison = 'I can with 99.9% accuracy say this mushroom is NOT POISONOUS'
+    #st.success(f'{poison}')
