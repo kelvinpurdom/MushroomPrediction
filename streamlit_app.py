@@ -9,7 +9,11 @@ import pickle
 model = pickle.load(open("rf_model.pkl","rb"))
 
 # predict function will put all the variables from streamlit into the model
-def predict(cap_diameter, cap_shape, cap_surface,cap_color, does_bruise_or_bleed,gill_attachment,gill_color,stem_height,stem_width, stem_color, has_ring,ring_type,habitat,season):
+def predict(cap_diameter, cap_shape, cap_surface,
+            cap_color, does_bruise_or_bleed,
+            gill_attachment,gill_color,stem_height,
+            stem_width, stem_color, has_ring,ring_type,
+            habitat,season):
     # encoding streamlit to correct types of input data
     # cap shape
     if cap_shape == 'Convex':
@@ -183,7 +187,16 @@ def predict(cap_diameter, cap_shape, cap_surface,cap_color, does_bruise_or_bleed
 
 
     # prediction of the model engaged
-    prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,cap_color, does_bruise_or_bleed,gill_attachment,gill_color,stem_height,stem_width, stem_color, has_ring, ring_type,habitat,season]],columns=['cap-diameter', 'cap-shape', 'cap-surface','cap-color', 'does-bruise-or-bleed','gill-attachment', 'gill-color','stem-height','stem-width', 'stem-color', 'has-ring','ring-type','habitat','season']))
+    prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
+            cap_color, does_bruise_or_bleed,
+            gill_attachment,gill_color,stem_height,
+            stem_width, stem_color, has_ring, ring_type,
+            habitat,season]],
+                                        columns=['cap-diameter', 'cap-shape', 'cap-surface',
+                                                 'cap-color', 'does-bruise-or-bleed',
+                                                 'gill-attachment', 'gill-color','stem-height',
+                                                 'stem-width', 'stem-color', 'has-ring','ring-type',
+                                                 'habitat','season']))
     return prediction
 
 # Style points
@@ -227,7 +240,10 @@ with col3:
 
 #  streamlit button to activate predict function
 if st.button('Predict if Poisonous'):
-    poison = predict(cap_diameter, cap_shape, cap_surface,cap_color, does_bruise_or_bleed,gill_attachment,gill_color,stem_height,stem_width, stem_color,has_ring,ring_type, habitat, season)
+    poison = predict(cap_diameter, cap_shape, cap_surface,
+                    cap_color, does_bruise_or_bleed,gill_attachment,
+                    gill_color,stem_height,stem_width, stem_color,
+                    has_ring,ring_type, habitat, season)
 
     if poison[0] == 1:
         poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
