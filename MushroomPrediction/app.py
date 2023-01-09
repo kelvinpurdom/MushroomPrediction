@@ -3,8 +3,10 @@ import pandas as pd
 import pickle
 
 # loading the model
-with open('rf_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+#with open('rf_model.pkl', 'rb') as f:
+    #model = pickle.load(f)
+
+model = pickle.load(open('rf_model.pkl','rb'))
 
 # predict function will put all the variables from streamlit into the model
 def predict(cap_diameter, cap_shape, cap_surface,
