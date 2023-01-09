@@ -9,11 +9,7 @@ import pickle
 model = pickle.load(open("rf_model.pkl","rb"))
 
 # predict function will put all the variables from streamlit into the model
-def predict(cap_diameter, cap_shape, cap_surface,
-            cap_color, does_bruise_or_bleed,
-            gill_attachment,gill_color,stem_height,
-            stem_width, stem_color, has_ring,ring_type,
-            habitat,season):
+def predict(cap_diameter, cap_shape, cap_surface,cap_color, does_bruise_or_bleed,gill_attachment,gill_color,stem_height,stem_width, stem_color, has_ring,ring_type,habitat,season):
     # encoding streamlit to correct types of input data
     # cap shape
     if cap_shape == 'Convex':
