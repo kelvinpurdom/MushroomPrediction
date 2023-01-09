@@ -244,10 +244,10 @@ if st.button('Predict if Poisonous'):
                     cap_color, does_bruise_or_bleed,gill_attachment,
                     gill_color,stem_height,stem_width, stem_color,
                     has_ring,ring_type, habitat, season)
-    print(poison)
-    #if poison[0] == 1:
-        #poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
 
-    #else:
-        #poison = 'I can with 99.9% accuracy say this mushroom is NOT POISONOUS'
-    #st.success(f'{poison}')
+    if poison[0] == 1:
+        poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
+
+    else:
+        poison = 'I can with 99.9% accuracy say this mushroom is NOT POISONOUS'
+    st.success(f'{poison}')
