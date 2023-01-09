@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # loading the model
-with open('../rf_model.pkl', 'rb') as f:
+with open('rf_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # predict function will put all the variables from streamlit into the model
