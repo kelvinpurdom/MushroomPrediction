@@ -28,4 +28,4 @@ joblib
 memoized-property
 termcolor
 
-streamlit
+streamlit==1.10.0
