@@ -85,7 +85,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     # does bruise or bleed
     if does_bruise_or_bleed == 'False':
         does_bruise_or_bleed = 'f'
-    elif does_bruise_or_bleed == 'True':
+    else:
         does_bruise_or_bleed = 't'
 
 
@@ -102,7 +102,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         gill_attachment = 's'
     elif gill_attachment == 'Pores':
         gill_attachment = 'p'
-    elif gill_attachment == 'None':
+    else:
         gill_attachment = 'f'
 
 
@@ -131,7 +131,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         gill_color = 'l'
     elif gill_color == 'Buff':
         gill_color = 'b'
-    elif gill_color == 'None':
+    else:
         gill_color = 'f'
 
 
