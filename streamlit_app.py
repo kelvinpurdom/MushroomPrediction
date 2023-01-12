@@ -28,7 +28,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         cap_shape = 'o'
     elif cap_shape == 'Sepherical':
         cap_shape = 'p'
-    elif cap_shape == 'Conical':
+    else:
         cap_shape = 'c'
 
     # cap surface
@@ -52,7 +52,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         cap_surface = 'i'
     elif cap_surface == 'Wrinkled':
         cap_surface = 'w'
-    elif cap_surface == 'leathery':
+    else:
         cap_surface = 'l'
 
     # cap color
@@ -78,7 +78,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         cap_color = 'k'
     elif cap_color == 'Blue':
         cap_color = 'l'
-    elif cap_color == 'Buff':
+    else:
         cap_color = 'b'
 
 
