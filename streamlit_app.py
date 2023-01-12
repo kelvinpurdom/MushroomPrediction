@@ -138,7 +138,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
     # does it have a ring
     if has_ring == 'False':
         has_ring = 'f'
-    elif has_ring == 'True':
+    else:
         has_ring = 't'
 
     # what is the ring type
@@ -154,7 +154,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         ring_type = 'z'
     elif ring_type == 'Movable':
         ring_type = 'm'
-    elif ring_type == 'None':
+    else:
         ring_type = 'f'
 
     # what habitat does it live in
@@ -172,7 +172,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         habitat = 'u'
     elif habitat == 'Waste':
         habitat = 'w'
-    elif habitat == 'Woods':
+    else:
         habitat = 'd'
 
     # What season is it
@@ -182,7 +182,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
         season = 'u'
     elif season == 'Autumn':
         season = 'a'
-    elif season == 'Winter':
+    else:
         season = 'w'
 
 
