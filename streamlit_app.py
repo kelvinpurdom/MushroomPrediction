@@ -2,6 +2,13 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+from sklearn.preprocessing import MinMaxScaler
+
+from sklearn.compose import ColumnTransformer
+from sklearn.compose import make_column_selector
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier
+
 # loading the model
 #with open('rf_model.pkl', 'rb') as f:
     #model = pickle.load(f)
