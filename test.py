@@ -4,7 +4,6 @@ import pickle
 
 
 model = pickle.load(open('rf_model.pkl', 'rb'))
-model
 
 def predict_(cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
