@@ -206,7 +206,7 @@ st.header('Enter the characteristics of the Mushroom: ')
 # input numbers and selectbox options
 col1, col2, col3 = st.columns(3)
 with col1:
-    cap_diameter = st.number_input('Cap-diameter(cm):', min_value=0.38, max_value=63.0, value=1.0, step= 0.05)
+    cap_diameter = st.number_input('Cap-diameter(cm):', min_value=0.0, max_value=64.0, value=1.0, step= 0.05)
 
     cap_shape = st.selectbox('Cap Shape:', ['Convex', 'Flat', 'Sunken', 'Bell', 'Other', 'Spherical', 'Conical'])
 
@@ -248,5 +248,5 @@ if st.button('Predict if Poisonous'):
         poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
 
     else:
-        poison = 'I can with 99.9% accuracy say this mushroom is NOT POISONOUS'
+        poison = 'I can with 99.9','%',' accuracy say this mushroom is NOT POISONOUS'
     st.success(f'{poison}')
