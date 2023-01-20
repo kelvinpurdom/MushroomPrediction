@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-from sklearn.preprocessing import MinMaxScaler
-
-
 model = pickle.load(open("rf_model.pkl","rb"))
 
 # predict function will put all the variables from streamlit into the model
