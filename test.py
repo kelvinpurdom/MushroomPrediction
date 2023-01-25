@@ -1,18 +1,11 @@
-
+import streamlit as st
 import pandas as pd
 import pickle
 
-from sklearn.preprocessing import MinMaxScaler
+model = pickle.load(open("rf_model.pkl","rb"))
 
-from sklearn.compose import ColumnTransformer
-from sklearn.compose import make_column_selector
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.ensemble import RandomForestClassifier
-
-
-model = pickle.load(open('rf_model.pkl', 'rb'))
-
-def predict_(cap_diameter, cap_shape, cap_surface,
+# predict function will put all the variables from streamlit into the model
+def predict(cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
             stem_width, stem_color, has_ring,ring_type,
@@ -86,7 +79,7 @@ def predict_(cap_diameter, cap_shape, cap_surface,
 
 
     # does bruise or bleed
-    if does_bruise_or_bleed == 'False':
+    if does_bruise_or_bleed == False:
         does_bruise_or_bleed = 'f'
     else:
         does_bruise_or_bleed = 't'
@@ -139,7 +132,7 @@ def predict_(cap_diameter, cap_shape, cap_surface,
 
 
     # does it have a ring
-    if has_ring == 'False':
+    if has_ring == False:
         has_ring = 'f'
     else:
         has_ring = 't'
@@ -200,8 +193,6 @@ def predict_(cap_diameter, cap_shape, cap_surface,
                                                  'gill-attachment', 'gill-color','stem-height',
                                                  'stem-width', 'stem-color', 'has-ring','ring-type',
                                                  'habitat','season']))
-    print(prediction[0])
-    return prediction[0]
+    return prediction
 
-
-predictions = predict_(0.0, 'Convex', 'Fleshy','White', True,'Adnexed','White',3,4, 'White',False,'Grooved','Meadows','Spring')
+print(predict(1,'Convex','Sticky', 'Yellow', False, 'Adnate', 'Brown', 3, 3, 'Brown', True , 'None', 'Waste', 'Summer'))
