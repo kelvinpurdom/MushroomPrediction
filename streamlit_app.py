@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from sklearn.compose import ColumnTransformer
+from sklearn.compose import make_column_selector
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.pipeline import Pipeline
 
-model = pickle.load(open("rf_model.pkl","rb"))
+model = Pipeline(pickle.load(open("rf_model.pkl","rb")))
 
 # predict function will put all the variables from streamlit into the model
 def predict(cap_diameter, cap_shape, cap_surface,
