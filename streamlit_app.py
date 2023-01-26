@@ -6,26 +6,6 @@ from sklearn.externals import joblib
 # Load the trained model
 model = joblib.load('rf_model.pkl')
 
-def predict(input_data):
-    # Run the input data through the pipeline and make a prediction
-    prediction = model.predict(input_data)
-    return prediction
-
-def run():
-    st.title('Pipeline Example')
-
-    # Get input data from the user
-    input_data = st.text_input('Enter input data:')
-
-    # Run the pipeline and display the results
-    if st.button('Predict'):
-        result = predict(input_data)
-        st.write('Prediction:', result)
-
-if __name__ == '__main__':
-    run()
-
-
 # predict function will put all the variables from streamlit into the model
 def predict(cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
@@ -258,7 +238,3 @@ if st.button('Predict if Poisonous'):
     else:
         poison = 'I can with 99.9','%',' accuracy say this mushroom is NOT POISONOUS'
     st.success(f'{poison}')
-
-
-
-if __name__ == '__main__':
