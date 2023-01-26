@@ -230,4 +230,4 @@ def predict(cap_diameter, cap_shape, cap_surface,
                                                  'habitat','season']))
     return prediction
 
-print(predict(1,'Convex','Sticky', 'Yellow', False, 'Adnate', 'Brown', 3, 3, 'Brown', True , 'None', 'Waste', 'Summer'))
+print(predict(34,'Convex','Sticky', 'Yellow', False, 'Adnate', 'Brown', 56, 67, 'Brown', True , 'None', 'Waste', 'Summer'))
