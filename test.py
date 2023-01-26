@@ -4,7 +4,7 @@ import pickle
 from transformers import pipeline
 
 model = pickle.load(open("rf_model.pkl","rb"))
-pipe = pipeline(task="question-answering", model=model)
+#pipe = pipeline(task="question-answering", model=model)
 
 
 # predict function will put all the variables from streamlit into the model
@@ -186,7 +186,7 @@ def predict(cap_diameter, cap_shape, cap_surface,
 
 
     # prediction of the model engaged
-    prediction = pipe.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
+    prediction = model.predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
             stem_width, stem_color, has_ring, ring_type,
