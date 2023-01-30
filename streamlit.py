@@ -241,9 +241,9 @@ if st.button('Predict if Poisonous'):
                                                  'gill-attachment', 'gill-color','stem-height',
                                                  'stem-width', 'stem-color', 'has-ring','ring-type',
                                                  'habitat','season']))
-    st.text(result[0])
-    #if prediction[0] == 1:
-        #poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
-    #else:
-        #poison = 'I can with 99.9','%',' accuracy say this mushroom is NOT POISONOUS'
-    #st.success(f'{poison}')
+    if result[0] == 'p':
+        #poisonous = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
+        st.warning('Yes, I am very, very, very sure that this Mushroom IS POISONOUS', icon= "🚨")
+    elif result[0] == 'e':
+        #not_poisopoison = 'I can with 99.9','%',' accuracy say this mushroom is NOT POISONOUS'
+        st.success('I can with 99.9% accuracy say this mushroom is NOT POISONOUS',icon="✅")
