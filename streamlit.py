@@ -244,7 +244,7 @@ if st.button('Predict if Poisonous'):
                                            ]))
     if result[0] == 'p':
         #poisonous = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
-        st.warning('Yes, I am very, very, very sure that this Mushroom IS POISONOUS', icon= "🚨")
+        st.warning('Yes, I am very, very, very sure that this Mushroom IS POISONOUS')
     elif result[0] == 'e':
         #not_poisopoison = 'I can with 99.9','%',' accuracy say this mushroom is NOT POISONOUS'
-        st.success('I can with 99.9% accuracy say this mushroom is NOT POISONOUS',icon="✅")
+        st.success('I can with 99.9% accuracy say this mushroom is NOT POISONOUS')
