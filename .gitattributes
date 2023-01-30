@@ -1,1 +1,1 @@
-pipe_rf_model.pkl filter=lfs diff=lfs merge=lfs -text
+pipe_rf_model.sav filter=lfs diff=lfs merge=lfs -text
