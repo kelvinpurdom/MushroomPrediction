@@ -232,15 +232,16 @@ elif season== 'Winter':
 #  streamlit button to activate predict function
 if st.button('Predict if Poisonous'):
     result = predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
-            cap_color, does_bruise_or_bleed,
-            gill_attachment,gill_color,stem_height,
-            stem_width, stem_color, has_ring, ring_type,
-            habitat,season]],
-                                      columns=['cap-diameter', 'cap-shape', 'cap-surface',
-                                                 'cap-color', 'does-bruise-or-bleed',
-                                                 'gill-attachment', 'gill-color','stem-height',
-                                                 'stem-width', 'stem-color', 'has-ring','ring-type',
-                                                 'habitat','season']))
+                                    cap_color, does_bruise_or_bleed,
+                                    gill_attachment,gill_color,stem_height,
+                                    stem_width, stem_color, has_ring, ring_type,
+                                    habitat,season]],
+                                  columns=['cap-diameter', 'cap-shape', 'cap-surface',
+                                           'cap-color', 'does-bruise-or-bleed',
+                                           'gill-attachment', 'gill-color','stem-height',
+                                           'stem-width', 'stem-color', 'has-ring','ring-type',
+                                           'habitat','season'
+                                           ]))
     if result[0] == 'p':
         #poisonous = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
         st.warning('Yes, I am very, very, very sure that this Mushroom IS POISONOUS', icon= "🚨")
