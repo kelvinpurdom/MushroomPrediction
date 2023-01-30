@@ -6,5 +6,5 @@
 *.csv
 **/__pycache__/
 .env
-
+notebooks/
 *.ipynb
