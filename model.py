@@ -42,7 +42,7 @@ pipe = Pipeline([
                                                       criterion='gini',
                                                       max_depth= 30,
                                                       random_state=123)),
-])
+    ])
 
 pipe.fit(X_train,y_train)
 

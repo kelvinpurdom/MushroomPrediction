@@ -150,6 +150,34 @@ elif gill_color == 'Buff':
 else:
     gill_color = 'f'
 
+# gill color
+if stem_color == 'Brown':
+    stem_color = 'n'
+elif stem_color == 'Yellow':
+    stem_color = 'y'
+elif stem_color == 'White':
+    stem_color = 'w'
+elif stem_color == 'Grey':
+    stem_color = 'g'
+elif stem_color == 'Red':
+    stem_color = 'e'
+elif stem_color == 'Orange':
+    stem_color = 'o'
+elif stem_color == 'Green':
+    stem_color = 'r'
+elif stem_color == 'Purple':
+    stem_color = 'u'
+elif stem_color == 'Pink':
+    stem_color = 'p'
+elif stem_color == 'Black':
+    stem_color = 'k'
+elif stem_color == 'Blue':
+    stem_color = 'l'
+elif stem_color == 'Buff':
+    stem_color = 'b'
+else:
+    stem_color = 'f'
+
 
 # does it have a ring
 if has_ring == 'False':
@@ -198,12 +226,12 @@ elif season == 'Summer':
     season = 'u'
 elif season == 'Autumn':
     season = 'a'
-else:
+elif season== 'Winter':
     season = 'w'
 
 #  streamlit button to activate predict function
 if st.button('Predict if Poisonous'):
-    prediction = predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
+    result = predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
             cap_color, does_bruise_or_bleed,
             gill_attachment,gill_color,stem_height,
             stem_width, stem_color, has_ring, ring_type,
@@ -213,7 +241,7 @@ if st.button('Predict if Poisonous'):
                                                  'gill-attachment', 'gill-color','stem-height',
                                                  'stem-width', 'stem-color', 'has-ring','ring-type',
                                                  'habitat','season']))
-st.text(prediction[0])
+    st.text(result[0])
     #if prediction[0] == 1:
         #poison = 'Yes, I am very, very, very sure that this Mushroom IS POISONOUS'
     #else:
