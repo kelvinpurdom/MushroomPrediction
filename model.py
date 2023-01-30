@@ -21,8 +21,8 @@ drop_columns = ['gill-spacing', 'stem-root',
                 ]
 df.drop(columns=drop_columns, inplace=True)
 
-gender = {'p': 1,'e': 0}
-df['class'] = [gender[item] for item in df['class']]
+#gender = {'p': 1,'e': 0}
+#df['class'] = [gender[item] for item in df['class']]
 
 
 X = df.drop(columns='class')
@@ -44,6 +44,12 @@ pipe = Pipeline([
                                                       random_state=123)),
 ])
 
-pipe.fit(X,y)
+pipe.fit(X_train,y_train)
+
+y_pred = pipe.predict(X_test)
+
+# calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy}")
 
 joblib.dump(pipe, 'pipe_rf_model.sav')
