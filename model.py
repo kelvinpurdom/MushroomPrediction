@@ -41,7 +41,7 @@ pipe = Pipeline([
     ('RandomForestClassifier', RandomForestClassifier(n_estimators=1000,
                                                       criterion='gini',
                                                       max_depth= 30,
-                                                      random_state=123)),
+                                                      random_state=seed)),
     ])
 
 pipe.fit(X_train,y_train)
