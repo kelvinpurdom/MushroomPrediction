@@ -260,9 +260,9 @@ if st.button('Predict if Poisonous'):
                                            ]))
     if result[0] == 'p':
         # if Mushroom is predicted as poisonous
-        st.header(':red[YES, Be Careful, I am very, very, very sure that this Mushroom contains Poison]')
+        st.header('YES, Be Careful, I am very, very, very sure that this Mushroom contains Poison')
         st.image("""https://www.udiscovermusic.com/wp-content/uploads/2020/10/Poison-GettyImages-1189389370.jpg""")
     elif result[0] == 'e':
         # if Mushroom is predicted as not poisonous
-        st.header(':green[NO, With 99.9% accuracy, I can say this mushroom does not contain Poison]')
+        st.header('NO, With 99.9% accuracy, I can say this mushroom does not contain Poison')
         st.image("""https://www.udiscovermusic.com/wp-content/uploads/2020/11/Mo%CC%88tley-Cru%CC%88e-GettyImages-1202277301.jpg""")
