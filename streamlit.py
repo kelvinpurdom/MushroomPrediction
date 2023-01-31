@@ -3,17 +3,30 @@ import pandas as pd
 import numpy as np
 from prediction import predict
 
+# set tab button
 st.set_page_config( page_title='Mushroom Prediction')
 
+# remove menu and footer from streamlit
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
+
+# Set the title of the page
 st.markdown("<h1 style='text-align: center; color: white;'>The Poisonous Mushroom Predictor</h1>", unsafe_allow_html=True)
 # Style points
-#st.title('The Poisonous Mushroom Predictor')
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
 st.markdown("<h3 style='text-align: center; color: white;'>Enter the Characteristics of the Mushroom</h3>", unsafe_allow_html=True)
 
 
 
+
+# Create three columns on the page
 col1, col2, col3 = st.columns(3)
+
 with col1:
     cap_diameter = st.number_input('Cap-diameter(cm):', min_value=0.0, max_value=64.0, value=1.0, step= 1.0)
     cap_shape = st.selectbox('Cap Shape:', ['Convex', 'Flat', 'Sunken', 'Bell', 'Other', 'Spherical', 'Conical'])
@@ -34,6 +47,8 @@ with col3:
     habitat = st.selectbox('Habitat:', ['Woods', 'Grasses', 'Leaves', 'Meadows', 'Heaths', 'Paths', 'Waste', 'Urban'])
     season = st.selectbox('Season:', ['Spring', 'Summer', 'Winter', 'Summer'])
 
+# Translate input buttons into the expected values for the model
+# cap shape
 if cap_shape == 'Convex':
     cap_shape = 'x'
 elif cap_shape == 'Flat':
@@ -49,7 +64,7 @@ elif cap_shape == 'Sepherical':
 else:
     cap_shape = 'c'
 
-    # cap surface
+# cap surface
 if cap_surface == 'Sticky':
     cap_surface = 't'
 elif cap_surface == 'Smooth':
@@ -245,10 +260,10 @@ if st.button('Predict if Poisonous'):
                                            'habitat','season'
                                            ]))
     if result[0] == 'p':
-        #poisonous = 'Yes, I am very, very, very sure that this Mushroom contains Poison'
+        # if Mushroom is predicted as poisonous
         st.header(':red[YES, Be Careful, I am very, very, very sure that this Mushroom contains Poison]')
         st.image("""https://www.udiscovermusic.com/wp-content/uploads/2020/10/Poison-GettyImages-1189389370.jpg""")
     elif result[0] == 'e':
-        #not_poisopoison = 'I can with 99.9','%',' accuracy say this mushroom contains No Poison'
+        # if Mushroom is predicted as not poisonous
         st.header(':green[NO, With 99.9% accuracy, I can say this mushroom does not contain Poison]')
         st.image("""https://www.udiscovermusic.com/wp-content/uploads/2020/11/Mo%CC%88tley-Cru%CC%88e-GettyImages-1202277301.jpg""")
