@@ -3,11 +3,13 @@ import pandas as pd
 import numpy as np
 from prediction import predict
 
+st.set_page_config( page_title='Mushroom Prediction')
 
+st.markdown("<h1 style='text-align: center; color: white;'>The Poisonous Mushroom Predictor</h1>", unsafe_allow_html=True)
 # Style points
-st.title('The Poisonous Mushroom Predictor')
+#st.title('The Poisonous Mushroom Predictor')
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
-st.header('Enter the characteristics of the Mushroom: ')
+st.markdown("<h3 style='text-align: center; color: white;'>Enter the Characteristics of the Mushroom</h3>", unsafe_allow_html=True)
 
 
 
