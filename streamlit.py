@@ -1,10 +1,8 @@
+# import packages
 import streamlit as st
 import pandas as pd
-import numpy as np
 from prediction import predict
 import webbrowser
-
-
 
 # set tab button
 st.set_page_config(page_title='Mushroom Prediction')
@@ -55,6 +53,7 @@ with col3:
     season = st.selectbox('Season:', ['Spring', 'Summer', 'Winter', 'Summer'])
 
 # Translate input buttons into the expected values for the model
+
 # cap shape
 if cap_shape == 'Convex':
     cap_shape = 'x'
@@ -121,13 +120,11 @@ elif cap_color == 'Blue':
 else:
     cap_color = 'b'
 
-
 # does bruise or bleed
 if does_bruise_or_bleed == 'False':
     does_bruise_or_bleed = 'f'
 else:
     does_bruise_or_bleed = 't'
-
 
 # gill attachment
 if gill_attachment == 'Adnate':
@@ -144,7 +141,6 @@ elif gill_attachment == 'Pores':
     gill_attachment = 'p'
 else:
     gill_attachment = 'f'
-
 
 # gill color
 if gill_color == 'Brown':
@@ -253,7 +249,7 @@ elif season == 'Autumn':
 elif season== 'Winter':
     season = 'w'
 
-#  streamlit button to activate predict function
+# streamlit button to activate predict function
 if st.button('Predict if Poisonous'):
     result = predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
                                     cap_color, does_bruise_or_bleed,
@@ -266,6 +262,7 @@ if st.button('Predict if Poisonous'):
                                            'stem-width', 'stem-color', 'has-ring','ring-type',
                                            'habitat','season'
                                            ]))
+
     if result[0] == 'p':
         # if Mushroom is predicted as poisonous
         st.header('YES, Be Careful, I am very, very, very sure that this Mushroom contains Poison')
