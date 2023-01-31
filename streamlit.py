@@ -16,9 +16,9 @@ hide_default_format = """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
 # Set the title of the page
-st.markdown("<h1 style='text-align: center; color: white;'>The Poisonous Mushroom Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>The Poisonous Mushroom Predictor</h1>", unsafe_allow_html=True)
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
-st.markdown("<h3 style='text-align: center; color: white;'>Enter the Characteristics of the Mushroom: </h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: black;'>Enter the Characteristics of the Mushroom: </h3>", unsafe_allow_html=True)
 
 
 
