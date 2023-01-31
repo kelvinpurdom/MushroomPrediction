@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from prediction import predict
+import webbrowser
+
+
 
 # set tab button
 st.set_page_config(page_title='Mushroom Prediction')
@@ -17,6 +20,11 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 
 # Set the title of the page
 st.markdown("<h1 style='text-align: center; color: black;'>The Poisonous Mushroom Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: black;'>Created by Kelvin Purdom</h4>", unsafe_allow_html=True)
+
+url = 'https://github.com/kelvinpurdom'
+if st.button('Kelvins Github'):
+    webbrowser.open_new_tab(url)
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
 st.markdown("<h3 style='text-align: center; color: black;'>Enter the Characteristics of the Mushroom: </h3>", unsafe_allow_html=True)
 
