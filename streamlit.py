@@ -10,11 +10,11 @@ st.set_page_config(page_title='Mushroom Prediction')
 # remove menu and footer from streamlit
 hide_default_format = """
        <style>
-       #MainMenu {visibility: hidden; }
+
        footer {visibility: hidden;}
        </style>
        """
-#st.markdown(hide_default_format, unsafe_allow_html=True)
+st.markdown(hide_default_format, unsafe_allow_html=True)
 
 # Set the title of the page
 st.markdown("<h1 style='text-align: center; color: black;'>The Poisonous Mushroom Predictor</h1>", unsafe_allow_html=True)
@@ -39,7 +39,7 @@ with col1:
     cap_surface = st.selectbox('Cap Surface:', ['Sticky', 'Smooth', 'Scaley', 'Shiney', 'Grooves', 'Convex', 'Fleshy', 'Silky', 'Fibrous', 'Wrinkled', 'Leathery'])
     cap_color = st.selectbox('Cap Colour:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff'])
     does_bruise_or_bleed = st.selectbox('Does Bruise or Bleed:', ['False', 'True'])
-    cap_shape = st.selectbox('Cap Shape:', ['Convex', 'Flat', 'Sunken', 'Bell', 'Other', 'Spherical', 'Conical'])
+    cap_shape = st.selectbox('Cap Shape:', ['Convex', 'Flat', 'Sunken', 'Bell Shaped', 'Other', 'Spherical', 'Conical'])
     st.image("""https://i0.wp.com/midwestmycology.org/wp-content/uploads/2019/06/mushroom-cap-shapes.jpg?fit=900%2C178&ssl=1""")
 with col2:
 
@@ -52,17 +52,17 @@ with col2:
     st.markdown('')
     stem_width = st.number_input('Stem Width(cm):', min_value=0.0, max_value=34.0, value=1.0,step= 1.0)
     st.markdown('')
-    gill_attachment = st.selectbox('Gill Attachment:', ['Adnate', 'Decurrent', 'Adnexed', 'Pores', 'Free', 'Sinuate', 'None'])
+    gill_attachment = st.selectbox('Gill Attachment:', ['Adnate', 'Descending', 'Adnexed', 'Notched', 'Free', 'Seceding', 'None'])
     st.markdown('')
     st.markdown('')
-    st.image("""https://biolwww.usask.ca/fungi/graphics/glossary_pictures/glossary_pic16""")
+    st.image("""https://biolwww.usask.ca/fungi/graphics/glossary_pictures/glossary_pic19""")
 with col3:
 
     stem_color = st.selectbox('Stem Colour:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
     has_ring = st.selectbox('Has a Ring:', ['False', 'True'])
     habitat = st.selectbox('Habitat:', ['Woods', 'Grasses', 'Leaves', 'Meadows', 'Heaths', 'Paths', 'Waste', 'Urban'])
     season = st.selectbox('Season:', ['Spring', 'Summer', 'Winter', 'Summer'])
-    ring_type = st.selectbox('Ring Type:', ['Evanescent', 'Flaring', 'Grooved', 'Pendant', 'Ring Zone', 'Movable', 'None'])
+    ring_type = st.selectbox('Ring Type:', ['Sheathing', 'Grooved', 'Pendant', 'Ring Zone', 'Cobwebby', 'None'])
     st.image("""https://datascienceplus.com/wp-content/uploads/2018/02/mushroom-ring-type.jpg""")
 
 # Translate input buttons into the expected values for the model
@@ -74,7 +74,7 @@ elif cap_shape == 'Flat':
     cap_shape = 'f'
 elif cap_shape == 'Sunken':
     cap_shape = 's'
-elif cap_shape == 'Bell':
+elif cap_shape == 'Bell Shaped':
     cap_shape = 'b'
 elif cap_shape == 'Other':
     cap_shape = 'o'
@@ -144,13 +144,13 @@ if gill_attachment == 'Adnate':
     gill_attachment = 'a'
 elif gill_attachment == 'Adnexed':
     gill_attachment = 'x'
-elif gill_attachment == 'Decurrent':
+elif gill_attachment == 'Decsending':
     gill_attachment = 'd'
 elif gill_attachment == 'Free':
     gill_attachment = 'e'
-elif gill_attachment == 'Sinuate':
+elif gill_attachment == 'Seceding':
     gill_attachment = 's'
-elif gill_attachment == 'Pores':
+elif gill_attachment == 'Notched':
     gill_attachment = 'p'
 else:
     gill_attachment = 'f'
@@ -219,7 +219,7 @@ else:
     has_ring = 't'
 
 # what is the ring type
-if ring_type == 'Evanescent':
+if ring_type == 'Sheathing':
     ring_type = 'e'
 elif ring_type == 'Flaring':
     ring_type = 'r'
@@ -229,7 +229,7 @@ elif ring_type == 'Pendant':
     ring_type = 'p'
 elif ring_type == 'Ring Zone':
     ring_type = 'z'
-elif ring_type == 'Movable':
+elif ring_type == 'Cobwebby':
     ring_type = 'm'
 else:
     ring_type = 'f'
