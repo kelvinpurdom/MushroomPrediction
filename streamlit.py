@@ -29,6 +29,7 @@ url = 'https://github.com/kelvinpurdom'
 if st.button('Kelvins Github'):
     webbrowser.open_new_tab(url)
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
+st.markdown('Photo: Shutterstock')
 st.subheader("Enter the Characteristics of the Mushroom:")
 
 # Create three columns on the page
@@ -278,7 +279,9 @@ if st.button('Is This Mushroom Poisonous? '):
         # if Mushroom is predicted as poisonous
         st.header('YES, Be Careful, I am very, very, very sure that this Mushroom contains Poison')
         st.image("""https://www.udiscovermusic.com/wp-content/uploads/2020/10/Poison-GettyImages-1189389370.jpg""")
+        st.markdown('Photo: Ross Marino/Getty Images')
     elif result[0] == 'e':
         # if Mushroom is predicted as not poisonous
         st.header('NO, With 99.9% accuracy, I can say this mushroom does not contain Poison')
         st.image("""https://www.udiscovermusic.com/wp-content/uploads/2020/11/Mo%CC%88tley-Cru%CC%88e-GettyImages-1202277301.jpg""")
+        st.markdown('Photo: Ross Marino/Getty Images')
