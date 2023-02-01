@@ -18,13 +18,18 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 
 # Set the title of the page
 st.title('The Poisonous Mushroom Predictor')
-st.markdown("<h4 style='text-align: center; color: black;'>Created by Kelvin Purdom</h4>", unsafe_allow_html=True)
+st.subheader('Created by Kelvin Purdom')
+st.markdown("""Using the Random Forest Classifier
+            and preprocessing tools, I have built
+            a Machine Learning Model that can predict
+            with 99.9% accuracy, if a mushroom is
+            poisonous using these variables below. Try it out!""")
 
 url = 'https://github.com/kelvinpurdom'
 if st.button('Kelvins Github'):
     webbrowser.open_new_tab(url)
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
-st.markdown("<h3 style='text-align: center; color: black;'>Enter the Characteristics of the Mushroom: </h3>", unsafe_allow_html=True)
+st.subheader("Enter the Characteristics of the Mushroom:")
 
 # Create three columns on the page
 col1, col2, col3 = st.columns(3)
