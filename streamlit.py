@@ -17,7 +17,7 @@ hide_default_format = """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
 # Set the title of the page
-st.markdown("<h1 style='text-align: center; color: black;'>The Poisonous Mushroom Predictor</h1>", unsafe_allow_html=True)
+st.title('The Poisonous Mushroom Predictor')
 st.markdown("<h4 style='text-align: center; color: black;'>Created by Kelvin Purdom</h4>", unsafe_allow_html=True)
 
 url = 'https://github.com/kelvinpurdom'
@@ -26,15 +26,10 @@ if st.button('Kelvins Github'):
 st.image("""https://www.wissenschaft.de/wp-content/uploads/2/2/22-04-12-depression.jpg""")
 st.markdown("<h3 style='text-align: center; color: black;'>Enter the Characteristics of the Mushroom: </h3>", unsafe_allow_html=True)
 
-
-
-
 # Create three columns on the page
 col1, col2, col3 = st.columns(3)
 
 with col1:
-
-
     cap_diameter = st.number_input('Cap-diameter(cm):', min_value=0.0, max_value=64.0, value=1.0, step= 1.0)
     cap_surface = st.selectbox('Cap Surface:', ['Sticky', 'Smooth', 'Scaley', 'Shiney', 'Grooves', 'Convex', 'Fleshy', 'Silky', 'Fibrous', 'Wrinkled', 'Leathery'])
     cap_color = st.selectbox('Cap Colour:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff'])
@@ -44,8 +39,6 @@ with col1:
 with col2:
 
     st.markdown('')
-
-
     gill_color = st.selectbox('Gill Colour:', ['Brown', 'Yellow', 'White', 'Grey', 'Red', 'Orange', 'Green', 'Purple', 'Pink', 'Black', 'Blue', 'Buff', 'None'])
     st.markdown('')
     stem_height = st.number_input('Stem Height(cm):', min_value=0.0, max_value=34.0, value=1.0,step= 1.0)
@@ -263,7 +256,7 @@ elif season== 'Winter':
     season = 'w'
 
 # streamlit button to activate predict function
-if st.button('Predict if Poisonous'):
+if st.button('Is This Mushroom Poisonous? '):
     result = predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
                                     cap_color, does_bruise_or_bleed,
                                     gill_attachment,gill_color,stem_height,
