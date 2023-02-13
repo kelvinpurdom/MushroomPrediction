@@ -1,8 +1,8 @@
 # Data analysis
 - Document here the project: MushroomPrediction
 - Description: Project Description
-- Data Source:
-- Type of analysis:
+- Data Source: kaggle dataset
+- Type of analysis: Building a Prediction model with a Random Forest Classifier.
 
 Please document the project the better you can.
 
