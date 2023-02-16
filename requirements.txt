@@ -30,4 +30,4 @@ memoized-property
 termcolor
 
 streamlit==1.10.0
-sklearn
+scikit-learn
