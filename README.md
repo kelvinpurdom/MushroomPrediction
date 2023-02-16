@@ -4,7 +4,7 @@
 - Data Source: kaggle dataset
 - Type of analysis: Building a Prediction model with a Random Forest Classifier.
 
-Please document the project the better you can.
+![test](Mush.png)
 
 # Startup the project
 
