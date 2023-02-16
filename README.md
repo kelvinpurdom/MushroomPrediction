@@ -4,6 +4,8 @@
 - Data Source: kaggle dataset
 - Type of analysis: Building a Prediction model with a Random Forest Classifier.
 
+The aim of the project is to predict (using 14 parameters) whether a Mushroom is poisonous. I have tuned the Random Forest Classifier for the optimal hyperperameters to acheive a success rate of 99.9% accuracy.
+
 ![test](Mush.png)
 
 # Startup the project
