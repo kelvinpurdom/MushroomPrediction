@@ -17,6 +17,7 @@
 	unknown edibility and not recommended (the latter class was combined with the poisonous class).
 	Of the 20 variables, 17 are nominal and 3 are metrical.
 
+
 4. Data simulation:
 	The related Python project (Sources (c)) contains a Python module secondary_data_generation.py
 	used to generate this data based on primary_data_edited.csv also found in the repository.
@@ -24,8 +25,10 @@
 	The simulated and ordered by species version is found in secondary_data_generated.csv.
 	The randomly shuffled version is found in secondary_data_shuffled.csv.
 
+
 5. Class information:
 	1. class		poisonous=p, edibile=e (binary)
+
 
 6. Variable Information:
    (n: nominal, m: metrical; nominal values as sets of values)
