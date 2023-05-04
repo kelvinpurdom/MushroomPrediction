@@ -261,6 +261,7 @@ elif season == 'Autumn':
 elif season== 'Winter':
     season = 'w'
 
+
 # streamlit button to activate predict function
 if st.button('Is This Mushroom Poisonous? '):
     result = predict(pd.DataFrame([[cap_diameter, cap_shape, cap_surface,
@@ -280,6 +281,7 @@ if st.button('Is This Mushroom Poisonous? '):
         st.header('YES, Be Careful, I am very, very, very sure that this Mushroom contains Poison')
         st.image("""https://www.udiscovermusic.com/wp-content/uploads/2020/10/Poison-GettyImages-1189389370.jpg""")
         st.markdown('Photo: Ross Marino/Getty Images')
+
     elif result[0] == 'e':
         # if Mushroom is predicted as not poisonous
         st.header('NO, With 99.9% accuracy, I can say this mushroom does not contain Poison')
