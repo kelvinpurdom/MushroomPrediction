@@ -16,3 +16,4 @@ setup(name='MushroomPrediction',
       include_package_data=True,
       scripts=['scripts/MushroomPrediction-run'],
       zip_safe=False)
+8
