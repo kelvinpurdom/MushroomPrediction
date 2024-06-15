@@ -1,6 +1,6 @@
 # Data analysis
-- Document here the project: MushroomPrediction
-- Description: Project Description
+- the project: MushroomPrediction
+- Description: Poisonous Mushroom predictor, based on several factors. 
 - Data Source: kaggle dataset
 - Type of analysis: Building a Prediction model with a Random Forest Classifier.
 
